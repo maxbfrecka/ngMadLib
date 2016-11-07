@@ -1,12 +1,13 @@
 angular.module('myApp', [])
-    .controller('madlib', function($scope) {
-    	$scope.male_name;
-    	$scope.job_title;
-    	$scope.tedius_task;
-    	$scope.dirty_task;
-    	$scope.celebrity;
-    	$scope.useless_skill;
-    	$scope.obnoxious_celebrity;
-    	$scope.huge_number;
-    	$scope.adjective;
+    .controller('madlib', function() {
+    	var ml = this;
+    	ml.male_name;
+    	ml.job_title;
+    	ml.tedius_task;
+    	ml.dirty_task;
+    	ml.celebrity;
+    	ml.useless_skill;
+    	ml.obnoxious_celebrity;
+    	ml.huge_number;
+    	ml.adjective;
     });
