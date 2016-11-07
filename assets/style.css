@@ -1,0 +1,49 @@
+#page {
+
+    text-align:center;
+    width:80%;
+}
+
+#nav {
+	border-style:solid;
+	border-width:3px;
+}
+
+img#smiley {
+	border-style:solid;
+	border-width:0px 3px 0px 0px;
+	float:left;
+	width:30%;
+
+}
+
+#titlestuff{
+	font-size:58px;
+}
+
+#heading {
+	padding:1px;
+	float:left;
+	width:50%;
+	text-align:center;
+}
+
+div#inputs1 {
+	border-style:solid;
+	border-width:0px 3px 0px 3px;
+	padding:5px;
+
+}
+
+#finished {
+	border-style:solid;
+	border-width:3px;
+}
+
+#madlib {
+	font-size:26px;
+}
+
+h2 {
+	font-size:40px;
+}
