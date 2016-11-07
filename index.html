@@ -1,14 +1,14 @@
 <!DOCTYPE html>
-<html ng-app="">
+<html ng-app="myApp" ng-controller="madlib">
 
   <head>
     <link rel="stylesheet" type="text/css" href="assets/skeleton.css">
     <link rel="stylesheet" type="text/css" href="assets/style.css"> 
     <script src="https://code.angularjs.org/1.3.10/angular.js"></script>
+    <script src="controller.js"></script>
   </head>
 
   <body>
-
 
   <div id="page" class="container">
 
@@ -35,22 +35,22 @@
     <div class="row"> 
 
     	<div class="four columns">
-    		<input type="text" ng-model="o.male_name" placeholder="Male name"/>
-    		<input type="text" ng-model="o.job_title" placeholder="Job title"/>
-    		<input type="text" ng-model="o.tedius_task" placeholder="Tedius task"/>
+    		<input type="text" ng-model="male_name" placeholder="Male name"/>
+    		<input type="text" ng-model="job_title" placeholder="Job title"/>
+    		<input type="text" ng-model="tedius_task" placeholder="Tedius task"/>
 	    </div>
 
 
 	    <div class="four columns">
-	    	<input type="text" ng-model="o.dirty_task" placeholder="Dirty task"/>
-	    	<input type="text" ng-model="o.celebrity" placeholder="Celebrity"/>
-	    	<input type="text" ng-model="o.useless_skill" placeholder="Useless skill"/>
+	    	<input type="text" ng-model="dirty_task" placeholder="Dirty task"/>
+	    	<input type="text" ng-model="celebrity" placeholder="Celebrity"/>
+	    	<input type="text" ng-model="useless_skill" placeholder="Useless skill"/>
 	    </div>
 
 	    <div class="four columns">
-	    	<input type="text" ng-model="o.obnoxious_celebrity" placeholder="Obnoxious celebrity"/>
-	    	<input type="text" ng-model="o.huge_number" placeholder="Huge number"/>
-	    	<input type="text" ng-model="o.adjective" placeholder="Adjective"/>
+	    	<input type="text" ng-model="obnoxious_celebrity" placeholder="Obnoxious celebrity"/>
+	    	<input type="text" ng-model="huge_number" placeholder="Huge number"/>
+	    	<input type="text" ng-model="adjective" placeholder="Adjective"/>
 	    </div>
 
     </div>
@@ -64,8 +64,8 @@
     	    <h2>See your madlib here:</h2>
     	<p id="madlib">
 
-  			{{o.male_name}} was a {{o.job_title}} who loved technology. Although he loved parts of his job, he absolutely hated {{o.tedius_task}} and {{o.dirty_task}}. So, {{o.male_name}} met with his mentor {{o.celebrity}} who told him to learn how to {{o.useless_skill}} with Thinkful. Thinkful didn't offer a course on {{o.useless_skill}} so he studied programming instead.<br>
-  			What a great decision! With his new skills, {{o.male_name}} built a(n) {{o.adjective}} robot named {{o.obnoxious_celebrity}} that not only loved {{o.dirty_task}} but did it {{o.huge_number}} faster.
+  			{{male_name}} was a {{job_title}} who loved technology. Although he loved parts of his job, he absolutely hated {{tedius_task}} and {{dirty_task}}. So, {{male_name}} met with his mentor {{celebrity}} who told him to learn how to {{useless_skill}} with Thinkful. Thinkful didn't offer a course on {{useless_skill}} so he studied programming instead.<br>
+  			What a great decision! With his new skills, {{male_name}} built a(n) {{adjective}} robot named {{obnoxious_celebrity}} that not only loved {{dirty_task}} but did it {{huge_number}} faster.
 
     	</p>
     	</div>
@@ -75,6 +75,7 @@
 
 
 </div> 
+</div>
 
 
 
