@@ -30,7 +30,7 @@ img#smiley {
 
 div#inputs1 {
 	border-style:solid;
-	border-width:0px 3px 0px 3px;
+	border-width:0px 3px 3px 3px;
 	padding:5px;
 
 }
@@ -46,4 +46,12 @@ div#inputs1 {
 
 h2 {
 	font-size:40px;
+}
+
+#madlib_submit {
+	float: right;
+}
+
+#reset {
+	float: right;
 }

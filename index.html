@@ -5,6 +5,9 @@
     <link rel="stylesheet" type="text/css" href="assets/skeleton.css">
     <link rel="stylesheet" type="text/css" href="assets/style.css"> 
     <script src="https://code.angularjs.org/1.3.10/angular.js"></script>
+
+    <script src="https://code.angularjs.org/1.3.10/angular-messages.min.js"></script>
+
     <script src="controller.js"></script>
   </head>
 
@@ -21,10 +24,37 @@
     		<h1 id="titlestuff">Automate This!</h1>
     	</div>
   	</div>
-   
+
+    <div class="row">
+      <div class="three columns">
+      <h1>testing submit feature</h1>
+      <form name="Booya">
+        <p>Two times
+          <input type="number" name="num" ng-model="num" placeholder="number" required>
+          is {{ double(num) }} </p>
 
 
-  	<div id="inputs1">
+
+
+
+
+
+      </form>
+      </div>
+    </div>
+
+    
+
+
+    
+
+
+
+
+
+
+
+  	<div id="inputs1" ng-hide="reset && fillIns.$submitted && fillIns.malename.$valid">
 
     <div id="title" class="row">	
     	<div class="twelve columns">
@@ -34,49 +64,52 @@
 
     <div class="row"> 
 
+    <form name="fillIns" ng-submit="reset=!reset">
     	<div class="four columns">
-    		<input type="text" ng-model="male_name" placeholder="Male name"/>
-    		<input type="text" ng-model="job_title" placeholder="Job title"/>
-    		<input type="text" ng-model="tedius_task" placeholder="Tedius task"/>
+    		<input type="text" name="malename" ng-model="male_name" placeholder="Male name" required>
+    		<input type="text" name="jobtitle" ng-model="job_title" placeholder="Job title" required>
+    		<input type="text" name="tedioustask" ng-model="tedious_task" placeholder="Tedious task" required>
 	    </div>
 
 
 	    <div class="four columns">
-	    	<input type="text" ng-model="dirty_task" placeholder="Dirty task"/>
-	    	<input type="text" ng-model="celebrity" placeholder="Celebrity"/>
-	    	<input type="text" ng-model="useless_skill" placeholder="Useless skill"/>
+	    	<input type="text" name="dirtytask" ng-model="dirty_task" placeholder="Dirty task" required/>
+	    	<input type="text" name="celebrity" ng-model="celebrity" placeholder="Celebrity" required/>
+	    	<input type="text" name="uselessskill" ng-model="useless_skill" placeholder="Useless skill" required/>
 	    </div>
 
 	    <div class="four columns">
-	    	<input type="text" ng-model="obnoxious_celebrity" placeholder="Obnoxious celebrity"/>
-	    	<input type="text" ng-model="huge_number" placeholder="Huge number"/>
-	    	<input type="text" ng-model="adjective" placeholder="Adjective"/>
+	    	<input type="text" name="obnoxiouscelebrity" ng-model="obnoxious_celebrity" placeholder="Obnoxious celebrity" required/>
+	    	<input type="number" name="hugenumber" ng-model="huge_number" placeholder="Huge number" required/>
+	    	<input type="text" name="adjective" ng-model="adjective" placeholder="Adjective" required/>
 	    </div>
-
+      <button id="madlib_submit">Submit</button>
+    </form>
     </div>
     </div>
 
+<!--
+    <div ng-if="myForm.$submitted" ng-messages="myForm.$error">
+    <span class="error" ng-message="required">This stinkin field is required!</span>
+    </div>
+--> 
 
 
 
-    <div class="row">
+    <div class="row" ng-show="reset && fillIns.$submitted && fillIns.malename.$valid">
     	<div id="finished" class="twelve columns">
     	    <h2>See your madlib here:</h2>
     	<p id="madlib">
 
-  			{{male_name}} was a {{job_title}} who loved technology. Although he loved parts of his job, he absolutely hated {{tedius_task}} and {{dirty_task}}. So, {{male_name}} met with his mentor {{celebrity}} who told him to learn how to {{useless_skill}} with Thinkful. Thinkful didn't offer a course on {{useless_skill}} so he studied programming instead.<br>
+  			{{male_name}} was a {{job_title}} who loved technology. Although he loved parts of his job, he absolutely hated {{tedious_task}} and {{dirty_task}}. So, {{male_name}} met with his mentor {{celebrity}} who told him to learn how to {{useless_skill}} with Thinkful. Thinkful didn't offer a course on {{useless_skill}} so he studied programming instead.<br>
   			What a great decision! With his new skills, {{male_name}} built a(n) {{adjective}} robot named {{obnoxious_celebrity}} that not only loved {{dirty_task}} but did it {{huge_number}} faster.
 
     	</p>
     	</div>
+      <button id="reset" ng-click="reset=!reset">Reset</button>
     </div>
-
-
-
-
-</div> 
+</body>
 </div>
-
 
 
 </body>
