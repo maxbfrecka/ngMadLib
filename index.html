@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html ng-app="myApp" ng-controller="madlib as ml">
+<html>
 
   <head>
     <link rel="stylesheet" type="text/css" href="assets/skeleton.css">
@@ -11,50 +11,22 @@
     <script src="controller.js"></script>
   </head>
 
-  <body>
+  <body ng-app="myApp" ng-controller="MadlibController as ml">
 
-  <div id="page" class="container">
+    <div id="page" class="container">
 
-  	<div id="nav" class="row">
-  		<div class="three columns">
-    		<img id="smiley" src="assets/mad-lib-happy-face.png" style="width:150px;height:150px;">
-    	</div>
-    	<div id="heading" class="nine columns">
-    		<img src="assets/ng-mad-libs-logo.png" style="width:200px;height:60px;" align="center">
-    		<h1 id="titlestuff">Automate This!</h1>
+  	 <div id="nav" class="row">
+  	   	<div class="three columns">
+    	   	<img id="smiley" src="assets/mad-lib-happy-face.png" style="width:150px;height:150px;">
+    	   </div>
+    	 <div id="heading" class="nine columns">
+    		  <img src="assets/ng-mad-libs-logo.png" style="width:200px;height:60px;" align="center">
+    		  <h1 id="titlestuff">Automate This!</h1>
     	</div>
   	</div>
-
-    <div class="row">
-      <div class="three columns">
-      <h1>testing submit feature</h1>
-      <form name="Booya">
-        <p>Two times
-          <input type="number" name="num" ng-model="num" placeholder="number" required>
-          is {{ double(num) }} </p>
-
-
-
-
-
-
-
-      </form>
-      </div>
-    </div>
-
     
 
-
-    
-
-
-
-
-
-
-
-  	<div id="inputs1" ng-hide="reset && fillIns.$submitted && fillIns.malename.$valid">
+  	<div id="inputs1" ng-hide="ml.reset && fillIns.$submitted && fillIns.malename.$valid">
 
     <div id="title" class="row">	
     	<div class="twelve columns">
@@ -64,24 +36,24 @@
 
     <div class="row"> 
 
-    <form name="fillIns" ng-submit="reset=!reset">
+    <form name="fillIns" ng-submit="ml.submit()">
     	<div class="four columns">
-    		<input type="text" name="malename" ng-model="male_name" placeholder="Male name" required>
-    		<input type="text" name="jobtitle" ng-model="job_title" placeholder="Job title" required>
-    		<input type="text" name="tedioustask" ng-model="tedious_task" placeholder="Tedious task" required>
+    		<input type="text" name="malename" ng-model="ml.maleName" placeholder="Male name" required>
+    		<input type="text" name="jobtitle" ng-model="ml.jobTitle" placeholder="Job title" required>
+    		<input type="text" name="tedioustask" ng-model="ml.tediousTask" placeholder="Tedious task" required>
 	    </div>
 
 
 	    <div class="four columns">
-	    	<input type="text" name="dirtytask" ng-model="dirty_task" placeholder="Dirty task" required/>
-	    	<input type="text" name="celebrity" ng-model="celebrity" placeholder="Celebrity" required/>
-	    	<input type="text" name="uselessskill" ng-model="useless_skill" placeholder="Useless skill" required/>
+	    	<input type="text" name="dirtytask" ng-model="ml.dirtyTask" placeholder="Dirty task" required/>
+	    	<input type="text" name="celebrity" ng-model="ml.celebrity" placeholder="Celebrity" required/>
+	    	<input type="text" name="uselessskill" ng-model="ml.uselessSkill" placeholder="Useless skill" required/>
 	    </div>
 
 	    <div class="four columns">
-	    	<input type="text" name="obnoxiouscelebrity" ng-model="obnoxious_celebrity" placeholder="Obnoxious celebrity" required/>
-	    	<input type="number" name="hugenumber" ng-model="huge_number" placeholder="Huge number" required/>
-	    	<input type="text" name="adjective" ng-model="adjective" placeholder="Adjective" required/>
+	    	<input type="text" name="obnoxiouscelebrity" ng-model="ml.obnoxiousCelebrity" placeholder="Obnoxious celebrity" required/>
+	    	<input type="number" name="hugenumber" ng-model="ml.hugeNumber" placeholder="Huge number" required/>
+	    	<input type="text" name="adjective" ng-model="ml.adjective" placeholder="Adjective" required/>
 	    </div>
       <button id="madlib_submit">Submit</button>
     </form>
@@ -96,17 +68,17 @@
 
 
 
-    <div class="row" ng-show="reset && fillIns.$submitted && fillIns.malename.$valid">
+    <div class="row" ng-show="ml.reset && fillIns.$submitted && fillIns.malename.$valid">
     	<div id="finished" class="twelve columns">
     	    <h2>See your madlib here:</h2>
     	<p id="madlib">
 
-  			{{male_name}} was a {{job_title}} who loved technology. Although he loved parts of his job, he absolutely hated {{tedious_task}} and {{dirty_task}}. So, {{male_name}} met with his mentor {{celebrity}} who told him to learn how to {{useless_skill}} with Thinkful. Thinkful didn't offer a course on {{useless_skill}} so he studied programming instead.<br>
-  			What a great decision! With his new skills, {{male_name}} built a(n) {{adjective}} robot named {{obnoxious_celebrity}} that not only loved {{dirty_task}} but did it {{huge_number}} faster.
+  			{{ml.maleName}} was a {{ml.jobTitle}} who loved technology. Although he loved parts of his job, he absolutely hated {{ml.tediousTask}} and {{ml.dirtyTask}}. So, {{ml.maleName}} met with his mentor {{ml.celebrity}} who told him to learn how to {{ml.uselessSkill}} with Thinkful. Thinkful didn't offer a course on {{ml.uselessSkill}} so he studied programming instead.<br>
+  			What a great decision! With his new skills, {{ml.maleName}} built a(n) {{ml.adjective}} robot named {{ml.obnoxiousCelebrity}} that not only loved {{ml.dirtyTask}} but did it {{ml.hugeNumber}} faster.
 
     	</p>
     	</div>
-      <button id="reset" ng-click="reset=!reset">Reset</button>
+      <button id="reset" ng-click="ml.resetVals()">Reset</button>
     </div>
 </body>
 </div>
