@@ -1,4 +1,4 @@
-angular.module('myApp', ['ngMessages'])
+angular.module('myApp', ['ngMessages', 'ngAnimate'])
     .controller('MadlibController', function() {
     	var _this = this;
         this.reset=false;

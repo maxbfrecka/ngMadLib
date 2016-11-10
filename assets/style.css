@@ -28,6 +28,41 @@ img#smiley {
 	text-align:center;
 }
 
+
+
+
+.inputs {
+  overflow: hidden;
+  transition: all linear .5s;
+}
+
+.inputs.ng-hide-add,
+.inputs.ng-hide-remove.ng-hide-remove-active {
+  max-height:20em;
+}
+
+.inputs.ng-hide-remove,
+.inputs.ng-hide-add.ng-hide-add-active {
+  max-height:0em;
+}
+
+#finished {
+  overflow: hidden;
+  transition: all linear .5s;
+}
+
+#finished.ng-hide-add,
+#finished.ng-hide-remove.ng-hide-remove-active {
+  max-height:20em;
+}
+
+#finished.ng-hide-remove,
+#finished.ng-hide-add.ng-hide-add-active {
+  max-height:0em;
+}
+
+
+
 div#inputs1 {
 	border-style:solid;
 	border-width:0px 3px 3px 3px;
@@ -35,10 +70,6 @@ div#inputs1 {
 
 }
 
-#finished {
-	border-style:solid;
-	border-width:3px;
-}
 
 #madlib {
 	font-size:26px;
